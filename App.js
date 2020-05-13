@@ -1,16 +1,14 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import "react-native-gesture-handler";
-import MainStackNavigator from "./src/Navigation/MainStackNavigator";
-export default function App() {
-  return <MainStackNavigator />;
-}
+import 'react-native-gesture-handler'
+import { decode, encode } from 'base-64' global.crypto = require("@firebase/firestore"); global.crypto.getRandomValues = byteArray => { for (let i = 0; i < byteArray.length; i++) { byteArray[i] = Math.floor(256 * Math.random()); } }
+if (!global.btoa) { global.btoa = encode; }
+if (!global.atob) { global.atob = decode; }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+
+
+import React from 'react'
+
+import MainStackNavigator from './src/Navigation/MainStackNavigator'
+
+export default function App(){
+  return <MainStackNavigator/>
+}
